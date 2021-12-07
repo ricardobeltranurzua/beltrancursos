@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @curso.nombre %>
+</p>
+
+<p>
+  <strong>Docente:</strong>
+  <%= @curso.docente %>
+</p>
+
+<ul>
+  <% @curso.estudiantes.each do |t| %>
+  <li><%= t.nombre %> <%= t.apellido %></li>  
+  <% end %>
+</ul>
+
+<%= link_to 'Editar', edit_curso_path(@curso) %> |
+<%= link_to 'Volver', cursos_path %>
